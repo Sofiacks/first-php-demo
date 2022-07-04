@@ -1,0 +1,20 @@
+# ignorer les réglages de phpstorm
+/.idea/
+
+###> symphony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symphony/framework-bundle ###
+
+###> symphony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symphony/phpunit-bridge ###
+
+
