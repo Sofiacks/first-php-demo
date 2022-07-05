@@ -1,26 +1,27 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
     <h1>Testou</h1>
         <div>
             {# je crée une variable !  #}
             {%  set name= "Guillaume" %}
 
             {# j'affiche ma varible avc moustaches #}
-        <h2>{{ name }}</h2>
+        <h2>{{ name | upper }}</h2>
 
             {# je crée un tableau #}
             {% set colors = ["orange", "brown", "turquoise","blue"] %}
 
-            {# affichage avec une boucle de couleurs #}
+            {# affichage boucles et filtres  #}
+
+            {# filtres de dates #}
+            <div>{{ "now" |date ('Y') }}</div>
+
+            <div>nombre de couleurs: {{ colors|length }}</div>
+            <div>{{ colors|join('/') }}</div>
             {%  for color in colors %}
+                <div>{{ loop.index }}</div>
                 <div style="background-color: {{  color  }}"> {{ color }}</div>
             {% endfor  %}
 
@@ -42,5 +43,6 @@
             </div>
         </div>
 
-</body>
-</html>
+{% endblock %}
+
+{% block title %} {{ parent() }} | Testounet {% endblock %}
