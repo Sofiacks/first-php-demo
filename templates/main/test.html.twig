@@ -2,10 +2,10 @@
 
 {% block body %}
 
-    <h1>Testou</h1>
+    <h1>Premières manipulations</h1>
         <div>
             {# je crée une variable !  #}
-            {%  set name= "Guillaume" %}
+            {%  set name= "Sofia" %}
 
             {# j'affiche ma varible avc moustaches #}
         <h2>{{ name | upper }}</h2>
@@ -27,9 +27,9 @@
 
             {# je crée un objet #}
             {% set book = {
-                title: "Pifpaf",
+                title: "Siphonnie",
                 year: 2022,
-                author: "John DOe"}
+                author: "Dave Loper "}
             %}
 
             {# j'affiche mon livre  #}

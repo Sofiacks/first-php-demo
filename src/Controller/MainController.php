@@ -16,7 +16,7 @@ class MainController extends AbstractController
     {
         //recevoir et traiter les données d'un formulaire + enregistrer
         //interroger la base de données
-        return  $this->render("main/home.html.twig");
+        return  $this->render ("main/home.html.twig");
     }
 
     /**
@@ -24,7 +24,7 @@ class MainController extends AbstractController
      */
 
     public function test(){
-        return $this->render("main/test.html.twig");
+        return $this->render ("main/test.html.twig");
     }
 
 }
