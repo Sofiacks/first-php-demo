@@ -1,10 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-
+    {{ serie.name }} | {{ parent() }}
 {% endblock %}
 
 {% block body %}
 
-{% endblock %}
+    <h2>{{ serie.name }}
+        <div>{{ serie.overview}} </div>
+        <div>{{ serie.vote }}</div>
+        {% endblock %}
 
+        {% block extrastyles %}
+            <style>
+                body {
+                    background-image: -moz-linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)),
+                url("{{ asset ('img/posters/seasons/'~serie.poster) }}");
+                } </style>
+    </h2>
+                {% endblock %}
