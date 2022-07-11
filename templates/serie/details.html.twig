@@ -5,17 +5,22 @@
 {% endblock %}
 
 {% block body %}
-
-    <h2>{{ serie.name }}
-        <div>{{ serie.overview}} </div>
-        <div>{{ serie.vote }}</div>
-        {% endblock %}
+    <div>
+    <h2>{{ serie.name }} </h2>
+    <div>User ratings: {{ serie.vote }}</div>
+    <div> Categorized in : {{ serie.genres }}</div>
+    <div>Serie status: {{ serie.status }}</div>
+    <div>Aired from {{ serie.firstAirDate|date ("Y-m-d")}} to {{ serie.lastAirDate| date ("Y-m-d") }}</div>
+    <div>{{ serie.overview|nl2br}} </div>
+    </div>
+{% endblock %}
 
         {% block extrastyles %}
             <style>
                 body {
-                    background-image: -moz-linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)),
-                url("{{ asset ('img/posters/seasons/'~serie.poster) }}");
-                } </style>
-    </h2>
-                {% endblock %}
+                    background-image:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)),
+                url("{{ asset ('img/backdrops/'~serie.backdrop) }}");
+                }
+            </style>
+
+        {% endblock %}
